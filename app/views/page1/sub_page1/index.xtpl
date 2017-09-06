@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">            
+        <title>Sub page1</title>
+        {{{addStyle('index')}}}
+    </head>
+    <body>
+        <h1>Sub page1</h1>
+        {{{addScript('index')}}}
+    </body>
+</html>

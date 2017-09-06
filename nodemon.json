@@ -1,0 +1,16 @@
+{
+    "ignore": [
+        ".git",
+        "assets/*",
+        "app/views/*",
+        "node_modules",
+        "nodemon.json",
+        "package.json"
+    ],
+    "watch": [
+        "app/controllers/*",
+        "config/*",
+        "server.js"
+    ],
+    "ext": "js json"
+}

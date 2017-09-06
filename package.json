@@ -1,0 +1,26 @@
+{
+  "name": "koa-",
+  "description": "koa、webpack脚手架",
+  "version": "1.0.0",
+  "author": [
+    "zhinian.yang"
+  ],
+  "scripts": {
+    "prod": "NODE_ENV=production",
+    "start": "./node_modules/.bin/nodemon -L server.js",
+    "dev": "webpack-dev-server './bin/build/webpack.dev.js'"
+  },
+  "dependencies": {
+    "daterangepicker": "0.0.3",
+    "glob": "^6.0.4",
+    "koa": "1.1.2",
+    "koa-bodyparser": "^2.0.1",
+    "koa-cache-control": "^1.0.0",
+    "koa-gzip": "^0.1.0",
+    "koa-router": "5.3.0",
+    "koa-static": "^1.5.2",
+    "xtemplate": "^4.5.1",
+    "xtpl": "^3.3.0"
+  },
+  "devDependencies": {}
+}
