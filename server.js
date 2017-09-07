@@ -7,11 +7,11 @@ var glob         = require('glob');
 var xtpl         = require('xtpl/lib/koa');
 var bodyParser   = require('koa-bodyparser');
 var gzip         = require('koa-gzip');
-var assetsConfig = require('./assets.json');
+var manifestConfig = require('./assets/manifest.json');
 
 var app = new Koa();
 
-var node_env = node_env || 'development';
+var node_env = process.env.NODE_ENV || 'development';
 // 资源缓存，一定要在静态资源和路由之前执行
 app.use(cacheControl ({
     maxAge: 365 * 24 * 60 * 60
@@ -31,15 +31,15 @@ app.use(function* (next) {
     this.state.env = node_env;
     this.state.addScript = function (src) {
         if (node_env === 'development') {
-            return '<script src="http://127.0.0.1:8080/js/' + src + '.js"></script>';
+            return '<script src="http://127.0.0.1:8080/js/' + src + '"></script>';
         }
-        return '<script src="' + assetsConfig[src]['js'] + '"></script>';
+        return '<script src="/' + manifestConfig[src] + '"></script>';
     };
     this.state.addStyle = function (src) {
         if (node_env === 'development') {
             return '';
         }
-        return '<link rel="stylesheet" href="' + assetsConfig[src]['css'] + '"/>';
+        return '<link rel="stylesheet" href="/' + manifestConfig[src] + '"/>';
     };
 
     yield next;
@@ -65,7 +65,7 @@ controllers.forEach(function (file) {
 });
 
 // 开启服务
-app.listen(8080, function () {
+app.listen(80, function () {
     console.log('Eye is running in ' + node_env + '...');
-    console.log('Listening on port: ' + 8888)
+    console.log('Listening on port: ' + 80)
 });

@@ -1,16 +1,16 @@
-import fs from 'fs';
-import glob from 'glob';
-import path from 'path';
+var fs   = require('fs');
+var glob = require('glob');
+var path = require('path');
 
 var entries = getEntry('./app/views/**/index.js', './app/views/');
 
 function getEntry(globPath, pathDir) {
-    let files = glob.sync(globPath),
+    var files = glob.sync(globPath),
         entries = {},
         entry,
         dirname,
         pathname;
-    for (let i = 0; i < files.length; i++) {
+    for (var i = 0; i < files.length; i++) {
         entry = files[i];
         dirname = path.dirname(entry);
         pathname = dirname.replace(new RegExp('^' + pathDir), '');
@@ -19,6 +19,6 @@ function getEntry(globPath, pathDir) {
     return entries;
 }
 
-export default {
+module.exports = {
     entries
 };

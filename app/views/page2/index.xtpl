@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">            
         <title>Page2</title>
-        {{{addStyle('index')}}}
+        {{{addStyle('page2.css')}}}
     </head>
     <body>
         <h1>Page2</h1>
-        {{{addScript('index')}}}
+        {{{addScript('page2.js')}}}
     </body>
 </html>
