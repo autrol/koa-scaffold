@@ -66,7 +66,7 @@ controllers.forEach(function (file) {
 
 // 开启服务
 app.listen(80, function () {
-    console.log('Eye is running in ' + node_env + '...');
+    console.log('Koa-scaffold is running in ' + node_env + '...');
     console.log('Listening on port: ' + 80)
 });
 
