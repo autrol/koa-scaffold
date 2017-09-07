@@ -1,3 +1,7 @@
 import './index.less';
 
-alert('hello, I\'m sub page1');
+function init (flag) {
+    return flag;
+}
+
+export default init;

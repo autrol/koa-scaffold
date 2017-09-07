@@ -69,3 +69,5 @@ app.listen(80, function () {
     console.log('Eye is running in ' + node_env + '...');
     console.log('Listening on port: ' + 80)
 });
+
+module.exports = app;

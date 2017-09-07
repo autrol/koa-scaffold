@@ -1,3 +1,8 @@
 import './index.less';
+import getType from './get_type';
 
-alert('hello, I\'m page1');
+const init = () => {
+    getType();
+};
+
+export default init;

@@ -1,3 +1,5 @@
 import './index.less';
 
-alert('hello, I\'m sub page1');
+const init = () => {};
+
+export default init;
