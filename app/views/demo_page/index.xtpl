@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">            
+        <title>Demo Page</title>
+        {{{addStyle('demo_page.css')}}}
+    </head>
+    <body>
+        <h1>{{data}}</h1>
+        {{{addScript('manifest.js')}}}
+        {{{addScript('vendor.js')}}}
+        {{{addScript('demo_page.js')}}}
+    </body>
+</html>

@@ -7,11 +7,12 @@ var glob         = require('glob');
 var xtpl         = require('xtpl/lib/koa');
 var bodyParser   = require('koa-bodyparser');
 var gzip         = require('koa-gzip');
-var manifestConfig = require('./assets/manifest.json');
+var manifestConfig = require('./build/manifest.json');
 
 var app = new Koa();
 
 var node_env = process.env.NODE_ENV || 'development';
+var port = process.env.NODE_ENV === 'production' ? 80 : 8888;
 // 资源缓存，一定要在静态资源和路由之前执行
 app.use(cacheControl ({
     maxAge: 365 * 24 * 60 * 60
@@ -21,7 +22,7 @@ app.use(cacheControl ({
 app.use(gzip());
 
 // 静态资源JS／CSS，只有这个文件夹的内容，外部才能直接访问
-app.use(staticServer(path.join(__dirname, '/assets')));
+app.use(staticServer(path.join(__dirname, '/build')));
 
 // 参数解析
 app.use(bodyParser());
@@ -65,9 +66,9 @@ controllers.forEach(function (file) {
 });
 
 // 开启服务
-app.listen(80, function () {
-    console.log('Koa-scaffold is running in ' + node_env + '...');
-    console.log('Listening on port: ' + 80)
+app.listen(port, function () {
+    console.log('Koa-scaffold is running in ' + node_env + '...\n' +
+        'Listening on port: ' + port)
 });
 
 module.exports = app;

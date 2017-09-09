@@ -4,27 +4,26 @@
   "version": "1.0.0",
   "author": "zhinian.yang",
   "scripts": {
+    "clean": "rm -rf ./build/*",
     "start": "./node_modules/.bin/nodemon -L server.js",
-    "build": "./node_modules/.bin/webpack --config ./build/webpack.prod.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./build/webpack.dev.js",
-    "prod": "NODE_ENV=production nodemon -L server.js",
+    "build": "./node_modules/.bin/webpack --config ./webpack_config/prod.js",
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack_config/dev.js",
+    "server": "NODE_ENV=production nodemon -L server.js",
     "lint": "./node_modules/.bin/eslint app/views/** --fix",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./test/**/*.spec.js",
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register test/**"
   },
   "dependencies": {
-    "daterangepicker": "0.0.3",
     "glob": "^6.0.4",
     "koa": "1.1.2",
     "koa-bodyparser": "^2.0.1",
     "koa-cache-control": "^1.0.0",
     "koa-gzip": "^0.1.0",
     "koa-router": "5.3.0",
-    "koa-static": "^1.5.2",
-    "xtemplate": "^4.5.1",
-    "xtpl": "^3.3.0"
+    "koa-static": "^1.5.2"
   },
   "devDependencies": {
+    "jquery": "^3.2.1",
     "autoprefixer": "^7.1.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -57,6 +56,9 @@
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
     "webpack-manifest-plugin": "^1.3.1",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-md5-hash": "0.0.5",
+    "xtemplate": "^4.5.1",
+    "xtpl": "^3.3.0",
+    "xtpl-loader": "^0.1.0"
   }
 }

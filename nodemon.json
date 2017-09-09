@@ -1,7 +1,7 @@
 {
     "ignore": [
         ".git",
-        "assets/*",
+        "build/*",
         "app/views/*",
         "node_modules",
         "nodemon.json",

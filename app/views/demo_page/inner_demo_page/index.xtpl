@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">            
+        <title>Inner Demo Page</title>
+        {{{addStyle('demo_page/inner_demo_page.css')}}}
+    </head>
+    <body>
+        <h1>Sub page1</h1>
+        {{{addScript('manifest.js')}}}
+        {{{addScript('vendor.js')}}}
+        {{{addScript('demo_page/inner_demo_page.js')}}}
+    </body>
+</html>

@@ -1,7 +1,5 @@
 app/controllers
 
-assets
-
 build
 
 coverage
@@ -9,5 +7,7 @@ coverage
 node_modules
 
 test
+
+webpack_config
 
 server.js
