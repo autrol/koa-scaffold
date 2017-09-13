@@ -2,7 +2,13 @@
 基于Koa、Webpack的脚手架，一键生成前端工程，给予良好的开发体验。
 
 ## 一键生成工程
-一键生成工程yargs
+```bash
+# 全局安装
+npm install -g server-scaffold
+
+# 执行
+scaffold --name=工程名(默认是server-scaffold)
+```
 
 ## 启动
 1、下载node工具包
