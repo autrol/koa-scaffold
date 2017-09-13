@@ -17,11 +17,7 @@ npm start
 ```c
 npm run dev
 ```
-4、配置host，scaffold.example.com指到本地
-```c
-127.0.0.1 koa.scaffold.com
-```
-5、访问[koa.scaffold.com:8888](http://koa.scaffold.com:8888)
+4、访问[localhost:9999](http://localhost:9999)
 
 ## 代码eslint
 ```c

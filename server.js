@@ -1,18 +1,18 @@
-var Koa          = require('koa');
-var path         = require('path');
-var staticServer = require('koa-static');
-var cacheControl = require('koa-cache-control');
-var Router       = require('koa-router');
-var glob         = require('glob');
-var xtpl         = require('xtpl/lib/koa');
-var bodyParser   = require('koa-bodyparser');
-var gzip         = require('koa-gzip');
+var Koa            = require('koa');
+var path           = require('path');
+var staticServer   = require('koa-static');
+var cacheControl   = require('koa-cache-control');
+var Router         = require('koa-router');
+var glob           = require('glob');
+var xtpl           = require('xtpl/lib/koa');
+var bodyParser     = require('koa-bodyparser');
+var gzip           = require('koa-gzip');
 var manifestConfig = require('./build/manifest.json');
 
 var app = new Koa();
 
 var node_env = process.env.NODE_ENV || 'development';
-var port = process.env.NODE_ENV === 'production' ? 80 : 8888;
+var port = node_env === 'production' ? 80 : 9999;
 // 资源缓存，一定要在静态资源和路由之前执行
 app.use(cacheControl ({
     maxAge: 365 * 24 * 60 * 60
