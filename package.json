@@ -1,8 +1,8 @@
 {
-  "name": "koa-",
+  "name": "server-scaffold",
   "description": "koa、webpack脚手架",
   "version": "1.0.0",
-  "author": "zhinian.yang",
+  "author": "Yang Zhinian",
   "scripts": {
     "clean": "rm -rf ./build/js/* ./build/css/*",
     "start": "./node_modules/.bin/nodemon -L server.js",
@@ -64,5 +64,10 @@
   },
   "bin": {
     "scaffold": "./bin/index.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/autrol/server-scaffold.git"
+  },
+  "license": "MIT"
 }
